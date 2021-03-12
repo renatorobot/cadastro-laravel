@@ -12,7 +12,7 @@
         
         <div class="container">
 
-            @component('component_navbar')
+            @component('component_navbar', ["current" => "$current"])
                 
             @endcomponent
 
