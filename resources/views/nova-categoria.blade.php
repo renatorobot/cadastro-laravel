@@ -11,7 +11,7 @@
                     <input type="text" class="form-control" name="nome_categoria" id="categoria" placeholder="Categoria">
                 </div>
                 <button type="submit" class="btn btn-primary">Salvar</button>
-                <button type="cancel" class="btn btn-danger">Cancelar</button>
+                <a href="/categorias" class="btn btn-danger">Cancelar</a>
             </form>
         </div>
     </div>

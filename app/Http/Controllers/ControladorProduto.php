@@ -67,8 +67,11 @@ class ControladorProduto extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   
+        $produto = Produto::find($id);
+        $categoria_produto = Categoria::find($produto->categoria_id);
+        $categorias = Categoria::all();
+        return view("editar-produto", compact('produto', 'categoria_produto', 'categorias'));
     }
 
     /**
@@ -80,7 +83,13 @@ class ControladorProduto extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $produto = Produto::find($id);
+        $produto->nome = $request->input('nome');
+        $produto->estoque = $request->input('estoque');
+        $produto->preco = $request->input('preco');
+        $produto->categoria_id = $request->input('categoria_id');
+        $produto->save();
+        return redirect('/produtos');
     }
 
     /**
