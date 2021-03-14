@@ -100,6 +100,10 @@ class ControladorProduto extends Controller
      */
     public function destroy($id)
     {
-        //
+        $produto = Produto::find($id);
+        if (isset($id)){
+            $produto->delete();
+            return redirect('/produtos');
+        }
     }
 }
